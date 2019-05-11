@@ -1,0 +1,8 @@
+div {
+    display: none;
+}
+
+div:target{
+    display:block;
+}
+
