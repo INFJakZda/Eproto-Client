@@ -1,8 +1,7 @@
-div {
+article {
     display: none;
 }
 
-div:target{
-    display:block;
+article:target {
+    display: block;
 }
-
