@@ -25,20 +25,169 @@
         </nav>
 
         <article id="students">
-            studenci
-            <section>
+            <h2>List of students</h2>
+            <form id="students-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="student-index">Index</label>
+                                <input type="search" id="student-index" name="index" aria-label="Index">
+                            </th>
+                            <th>
+                                <label for="student-name">Name</label>
+                                <input type="search" id="student-name" name="name" aria-label="Name">
+                            </th>
+                            <th>
+                                <label for="student-surname">Surname</label>
+                                <input type="search" id="student-surname" name="surname" aria-label="Surname">
+                            </th>
+                            <th>
+                                <label for="student-birthdate">Birth date</label>
+                                <input type="search" id="student-birthdate" name="birthDate" aria-label="Birth date">
+                                <select>
+                                    <option value="-1">Less than</option>
+                                    <option value="0">Equal</option>
+                                    <option value="1">Greater than</option>
+                                </select>
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="number" name="index" value="112871" placeholder="Index" readonly>
+                            </td>
+                            <td>
+                                <input type="text" name="name" value="Jan" placeholder="First name" required>
+                            </td>
+                            <td>
+                                <input type="text" name="surname" value="Kowalski" placeholder="Last name" required>
+                            </td>
+                            <td>
+                                <input type="date" name="birthDate" value="1990-01-01" min="1920-01-01" max="2020-01-01" required>
+                            </td>
+                            <td>
+                                <a href="#grades">Grades</a>
+                                <button type="button">Delete</button>
+                            </td>
+                        </tr>
 
-            </section>
-            <section>
-
-            </section>
-            <section>
-
-            </section>
+                        <tr>
+                            <td>
+                                <input type="number" name="index" placeholder="id" readonly>
+                            </td>
+                            <td>
+                                <input type="text" name="name" placeholder="First name" required>
+                            </td>
+                            <td>
+                                <input type="text" name="surname" placeholder="Last name" required>
+                            </td>
+                            <td>
+                                <input type="date" name="birthDate" min="1920-01-01" max="2019-01-01" required>
+                            </td>
+                            <td>
+                                <button type="submit">Add</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
         </article>
 
         <article id="courses">
-            Cursy
+            <h2>List of subjects</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td><input type="text" id="subjectName" placeholder="Subject"></td>
+                        <td><input type="text" id="subjectTeacher" placeholder="Teacher"></td>
+                        <td>Actions</td>
+                    <!--
+                        <td>Subject</td>
+                        <td>Teacher</td>
+                        <td>Actions</td>
+                    -->
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="subject1_name" value="Analiza Matematyczna" pattern="[A-Za-zÀ-ž]{2,}" required placeholder="Subject's name"></td>
+                        <td><input type="text" name="student1_teacher" value="Stefan Banach" pattern="[A-Za-zÀ-ž ]{2,}" required placeholder="Teacher's name"></td>
+                        <td>
+                            <a href="#students">See students</a>
+                            <input type="submit" name="subjectRedirect" value="See students">
+                            <input type="submit" name="subjectPut" value="Edit">
+                            <input type="submit" name="subjectDelete" value="Delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="subject2_name" value="Algebra Liniowa"  pattern="[A-Za-zÀ-ž]{2,}" required placeholder="Subject's name"></td>
+                        <td><input type="text" name="student2_teacher" value="Przemysław Nowak" pattern="[[A-Za-zÀ-ž ]{2,}" required  placeholder="Teacher's name"></td>
+                        <td>
+                            <a href="#students">See students</a>
+                            <input type="submit" name="subjectRedirect" value="See students">
+                            <input type="submit" name="subjectPut" value="Edit">
+                            <input type="submit" name="subjectDelete" value="Delete">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" name="new" value="New"></td>
+                    </tr>
+                </table>
+            </form>
+        </article>
+
+        <article id="grades">
+            <h2>Student's grades</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td><input type="text" id="gradeGrade" placeholder="Grade"></td>
+                        <td><input type="text" id="gradeDate" placeholder="Date"></td>
+                        <td><input type="text" id="gradeSubject" placeholder="Subject"></td>
+                        <td>Actions</td>
+                    <!--
+                        <td>Grade</td>
+                        <td>Date</td>
+                        <td>Subject</td>
+                        <td>Actions</td>
+                    -->
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="student1_grade" value="2" min="2" max="5" step="0.5"  required placeholder="Grade value"></td>
+                        <td><input type="date" name="student1_date" value="2018-05-10" min="2018-03-01" max="2018-07-01"  required></td>
+                        <td>
+                            <select>
+                                <option value="Analiza Matematyczna">Analiza Matematyczna</option>
+                                <option value="Algebra liniowa">Analiza Matematyczna</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" name="gradePut" value="Edit">
+                            <input type="submit" name="gradeDelete" value="Delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="student2_grade" value="2" min="2" max="5" step="0.5"  required placeholder="Grade value"></td>
+                        <td><input type="date" name="student2_date" value="2018-05-02" min="2018-03-01" max="2018-07-01"  required></td>
+                        <td>
+                            <select>
+                                <option value="Analiza Matematyczna">Analiza Matematyczna</option>
+                                <option value="Algebra liniowa">Analiza Matematyczna</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" name="gradePut" value="Edit">
+                            <input type="submit" name="gradeDelete" value="Delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><input type="submit" name="gradeNew" value="New"></td>
+                    </tr>
+                </table>
+            </form>
         </article>
         
         <footer>
