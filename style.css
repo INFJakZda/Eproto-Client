@@ -109,3 +109,70 @@ table input {
     padding: 0 5px;
     box-sizing: border-box;
 }
+
+input:invalid  {
+    border: 1px solid #d24949;
+}
+
+input[type="search"] {
+    background-image: url('http://i47.tinypic.com/r02vbq.png');
+    background-repeat: no-repeat;
+    background-position: 110% center;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+thead tr {
+    background-color: #C2EAC9;
+}
+tr {
+   background-color: #FCEBDD;
+}
+
+tr:nth-child(even) {
+    background-color: #EEDBEE;
+}
+
+tr:hover {
+    background-color: rgba(120, 121, 255, 0.54);
+}
+
+
+/* *** PRINT *** */
+
+@media print {
+    body {
+        color: #000000;
+        background: #ffffff;
+    }
+
+    header, footer, nav, input[type="search"], thead select {
+        display: none;
+    }
+
+    table input, thead tr, table tbody tr, tbody tr:nth-child(even), tbody tr:nth-child(odd), thead tr, tbody tr:hover, tbody tr:hover td {
+        background: none;
+        background-color: transparent;
+    }
+
+    tbody tr:last-child, td:last-child, th:last-child {
+        display: none;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        text-align: left;
+        border-top: 1px solid #ababab;
+        border-bottom: 1px solid #ababab;
+    }
+
+    article {
+        overflow-x: auto;
+    }
+
+}
+
+/* *** END PRINT *** */
